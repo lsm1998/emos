@@ -3,9 +3,9 @@ spring:
     name: emos-api
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://120.79.132.241:3306/sys-oa?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    jdbc-url: jdbc:mysql://120.79.132.241:3306/sys-oa?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
-    password: fuck123
+    password: mysqlyyds123
     #type: com.alibaba.druid.pool.DruidDataSource
     initialSize: 10
     minIdle: 10
@@ -14,3 +14,17 @@ spring:
     validationQuery: SELECT 1 FROM DUAL
     filters: stat,wall
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    url: jdbc:mysql://120.79.132.241:3306/sys-oa?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+  redis:
+    database: 0
+    host: 120.79.132.241
+    password: redisyyds123
+    port: 6379
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+
+server:
+  port: 8888
