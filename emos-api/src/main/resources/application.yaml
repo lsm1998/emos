@@ -19,10 +19,14 @@ spring:
     host: 120.79.132.241
     password: redisyyds123
     port: 6379
-
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-
+  data:
+    mongodb:
+      host: 120.79.132.241
+      port: 27017
+      username: admin
+      password: mongoyyds123
 server:
   port: 8888

@@ -84,11 +84,11 @@
 <!--            <version>${spring-boot-version}</version>-->
 <!--        </dependency>-->
 
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-data-mongodb</artifactId>-->
-<!--            <version>${spring-boot-version}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-mongodb</artifactId>
+            <version>${spring-boot-version}</version>
+        </dependency>
 
         <!-- knife4j 接口文档工具 -->
         <dependency>
