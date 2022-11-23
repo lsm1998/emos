@@ -6,7 +6,6 @@ import lombok.EqualsAndHashCode;
 
 @TableName("tb_user")
 @Data
-@EqualsAndHashCode
 public class User extends BaseModel
 {
     private String username;
