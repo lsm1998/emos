@@ -1,12 +1,11 @@
 package com.lsm1998.api.service.impl;
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lsm1998.api.mapper.UserMapper;
 import com.lsm1998.api.model.User;
 import com.lsm1998.api.service.UserService;
 import com.lsm1998.common.MD5Util;
-import com.lsm1998.common.PageParam;
+import com.lsm1998.api.request.UserListParam;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -19,9 +18,9 @@ public class UserServiceImpl implements UserService
     private UserMapper userMapper;
 
     @Override
-    public Page<User> getPageList(PageParam<User> param)
+    public Page<User> getPageList(UserListParam<User> param)
     {
-        return userMapper.selectPage(param.getPage(), new QueryWrapper<>(param.getData()));
+        return userMapper.selectPage(param.getPageInfo(), param.queryWrapper());
     }
 
     @Override

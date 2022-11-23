@@ -3,10 +3,8 @@ package com.lsm1998.api.controller;
 import com.lsm1998.api.model.User;
 import com.lsm1998.api.service.UserService;
 import com.lsm1998.common.AjaxResponse;
-import com.lsm1998.common.PageParam;
+import com.lsm1998.api.request.UserListParam;
 import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.web.bind.annotation.*;
@@ -29,7 +27,7 @@ public class UserController
 //            @ApiImplicitParam(name = "size", value = "大小", required = true)
 //    })
     @ApiOperation(value = "用户列表")
-    public AjaxResponse getList(PageParam<User> param)
+    public AjaxResponse getList(UserListParam<User> param)
     {
         return AjaxResponse.success(userService.getPageList(param));
     }

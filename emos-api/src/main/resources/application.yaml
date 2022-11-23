@@ -3,7 +3,6 @@ spring:
     name: emos-api
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    jdbc-url: jdbc:mysql://120.79.132.241:3306/sys-oa?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
     username: root
     password: mysqlyyds123
     #type: com.alibaba.druid.pool.DruidDataSource
@@ -24,7 +23,6 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-
 
 server:
   port: 8888

@@ -1,20 +1,17 @@
 package com.lsm1998.common;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.lsm1998.common.query.PageParam;
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class PageParam<E> implements Serializable
+public abstract class AbstractPageParam<T> implements PageParam<T>
 {
-    private E data;
-
     private int page;
 
     private int size;
 
-    private void checkPage()
+    public void checkPage()
     {
         if (page < 1)
         {
@@ -22,7 +19,7 @@ public class PageParam<E> implements Serializable
         }
     }
 
-    private void checkSize()
+    public void checkSize()
     {
         if (size < 10)
         {
@@ -33,10 +30,6 @@ public class PageParam<E> implements Serializable
         }
     }
 
-    public Page<E> getPage()
-    {
-        this.checkPage();
-        this.checkSize();
-        return new Page<>(page, size);
-    }
+    @Override
+    public abstract Page<T> getPageInfo();
 }
