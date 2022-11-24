@@ -54,6 +54,7 @@
                         </goals>
                     </execution>
                 </executions>
+                <version>${spring-boot-version}</version>
             </plugin>
         </plugins>
     </build>
