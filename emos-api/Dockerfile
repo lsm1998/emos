@@ -1,4 +1,13 @@
-FROM centos
-RUN yum -y install wget
-RUN wget -O redis.tar.gz "http://download.redis.io/releases/redis-5.0.3.tar.gz"
-RUN tar -xvf redis.tar.gz
+FROM openjdk:17
+
+MAINTAINER lsm1998
+
+RUN mkdir -p /opt/java
+
+ADD /target/emos-api.jar /opt/java/emos-api.jar
+
+WORKDIR /opt/java
+
+EXPOSE 8888
+
+ENTRYPOINT ["java", "-jar","emos-api.jar"]
