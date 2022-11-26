@@ -1,4 +1,4 @@
-package com.lsm1998.api.model;
+package com.lsm1998.common.model;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;

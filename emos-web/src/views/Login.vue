@@ -20,10 +20,9 @@
         />
       </el-form-item>
       <el-form-item>
-        <el-button class="loginBtn" type="primary" @click="submitForm(ruleFormRef)"
-        >Submit
-        </el-button
-        >
+        <el-button class="loginBtn" type="primary" @click="submitForm(ruleFormRef)">
+          Submit
+        </el-button>
         <el-button class="loginBtn" @click="resetForm">Reset</el-button>
       </el-form-item>
     </el-form>

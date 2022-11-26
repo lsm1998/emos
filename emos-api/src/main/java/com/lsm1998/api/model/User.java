@@ -1,8 +1,8 @@
 package com.lsm1998.api.model;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.lsm1998.common.model.BaseModel;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 @TableName("tb_user")
 @Data
