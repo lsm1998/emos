@@ -1,5 +1,5 @@
 import service from "@/request/index";
-import {ILoginData} from "@/type/login";
+import {ILoginData} from "@/types/login";
 
 export function login(data: ILoginData) {
     return service({

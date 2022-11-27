@@ -32,7 +32,7 @@
 <script lang="ts">
 import {defineComponent, reactive, ref, toRefs} from 'vue';
 
-import {LoginData} from "@/type/login";
+import {LoginData} from "@/types/login";
 import {FormInstance} from "element-plus";
 import {login} from '@/request/api';
 

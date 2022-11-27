@@ -4,7 +4,7 @@ import store from "@/store";
 
 // 创建axios实例
 const service = axios.create({
-    baseURL: "http://oa.lsm1998.com/api/v1",
+    baseURL: "/api/v1",
     timeout: 5000,
     headers: {
         "content-type": "application/json; charset=utf-8"
@@ -15,6 +15,9 @@ const service = axios.create({
 service.interceptors.request.use((config) => {
     if (!config.headers) {
         config.headers = {}
+    }
+    if (config.url === '/user/login') {
+        return config
     }
     const token = store.getters.token()
     if (token) {

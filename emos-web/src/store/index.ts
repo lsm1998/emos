@@ -1,6 +1,6 @@
 import {createStore} from 'vuex'
 
-import {UserInfo} from "@/type/user";
+import {UserInfo} from "@/types/user";
 
 export default createStore({
     state: new UserInfo(),
