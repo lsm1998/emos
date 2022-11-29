@@ -434,18 +434,6 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
         icon: 'carbon:cloud-service-management',
         order: 9
       }
-    },
-    {
-      name: 'about',
-      path: '/about',
-      component: 'self',
-      meta: {
-        title: '关于',
-        requiresAuth: true,
-        singleLayout: 'basic',
-        icon: 'fluent:book-information-24-regular',
-        order: 10
-      }
     }
   ],
   admin: [
@@ -874,18 +862,6 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
         order: 9
       }
     },
-    {
-      name: 'about',
-      path: '/about',
-      component: 'self',
-      meta: {
-        title: '关于',
-        requiresAuth: true,
-        singleLayout: 'basic',
-        icon: 'fluent:book-information-24-regular',
-        order: 10
-      }
-    }
   ],
   user: [
     {
@@ -984,18 +960,6 @@ export const routeModel: Record<Auth.RoleType, AuthRoute.Route[]> = {
         title: '多级菜单',
         icon: 'carbon:menu',
         order: 7
-      }
-    },
-    {
-      name: 'about',
-      path: '/about',
-      component: 'self',
-      meta: {
-        title: '关于',
-        requiresAuth: true,
-        singleLayout: 'basic',
-        icon: 'fluent:book-information-24-regular',
-        order: 8
       }
     }
   ]

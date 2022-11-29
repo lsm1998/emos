@@ -7,7 +7,6 @@ export const views: Record<RouterPage.LastDegreeRouteKey, RouteComponent | (() =
   'constant-page': () => import('./_builtin/constant-page/index.vue'),
   login: () => import('./_builtin/login/index.vue'),
   'not-found': () => import('./_builtin/not-found/index.vue'),
-  about: () => import('./about/index.vue'),
   'auth-demo_permission': () => import('./auth-demo/permission/index.vue'),
   'auth-demo_super': () => import('./auth-demo/super/index.vue'),
   component_button: () => import('./component/button/index.vue'),
