@@ -1,6 +1,6 @@
 spring:
   application:
-    name: emos-workflow
+    name: emos-api
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -13,7 +13,7 @@ spring:
     validationQuery: SELECT 1 FROM DUAL
     filters: stat,wall
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
-    url: jdbc:mysql://120.79.132.241:3306/workflow?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
+    url: jdbc:mysql://120.79.132.241:3306/football?characterEncoding=utf8&useSSL=false&serverTimezone=UTC&rewriteBatchedStatements=true
   redis:
     database: 0
     host: 120.79.132.241
@@ -22,8 +22,5 @@ spring:
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
-  data:
-    mongodb:
-      uri: mongodb://admin:mongoyyds123@120.79.132.241:27017/emos?serverSelectionTimeoutMS=5000&connectTimeoutMS=10000&authSource=admin&authMechanism=SCRAM-SHA-256
 server:
-  port: 9999
+  port: 9876

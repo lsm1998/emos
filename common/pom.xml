@@ -30,6 +30,18 @@
             <artifactId>mybatis-plus-extension</artifactId>
             <version>${mybatis-plus-version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${auth0-jwt-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -40,7 +52,7 @@
                 <artifactId>maven-plugin-plugin</artifactId>
                 <version>3.7.0</version>
                 <configuration>
-                    <skipTests>true</skipTests>
+<!--                    <skipTests>true</skipTests>-->
                     <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
                 </configuration>
             </plugin>

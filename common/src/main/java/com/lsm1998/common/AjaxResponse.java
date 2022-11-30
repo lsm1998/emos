@@ -25,6 +25,16 @@ public class AjaxResponse extends HashMap<String, Object>
         return response;
     }
 
+    public static AjaxResponse failWithParam()
+    {
+        return AjaxResponse.of(CODE_PARAM_ERROR, MESSAGE_PARAM_ERROR, null);
+    }
+
+    public static AjaxResponse fail(String message)
+    {
+        return AjaxResponse.of(CODE_SERVER_ERROR, message, null);
+    }
+
     public static AjaxResponse fail()
     {
         return AjaxResponse.of(CODE_SERVER_ERROR, MESSAGE_SERVER_ERROR, null);
