@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class Operation
 {
-    private Integer userId;
+    private Long userId;
 
     private String operation;
 }

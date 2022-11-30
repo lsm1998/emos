@@ -25,6 +25,7 @@ public class UserController
     private UserService userService;
 
     @PostMapping("/login")
+    @ApiOperation(value = "登录")
     public AjaxResponse login(@RequestBody User user)
     {
         if (Strings.isEmpty(user.getUsername()) || Strings.isEmpty(user.getPassword()))
@@ -41,10 +42,7 @@ public class UserController
     }
 
     @GetMapping("/profile")
-    @ApiOperation(value = "查询用户信息",
-            authorizations = {
-                    @Authorization("authorization")
-            })
+    @ApiOperation(value = "查询用户信息")
     @ApiImplicitParam(name = "authorization", value = "String 类型", required = true, dataType = "String", paramType = "header")
     public AjaxResponse profile()
     {
