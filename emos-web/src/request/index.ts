@@ -2,6 +2,8 @@ import axios from "axios";
 
 import { useStore } from "vuex"
 
+const state = useStore()
+
 // 创建axios实例
 const service = axios.create({
     baseURL: "http://127.0.0.1:9876/api/v1",
@@ -13,13 +15,14 @@ const service = axios.create({
 
 // 请求拦截
 service.interceptors.request.use((config) => {
+    // eslint-disable-next-line
+    debugger
     if (!config.headers) {
         config.headers = {}
     }
     if (config.url === '/user/login') {
         return config
     }
-    const state = useStore()
     if (state.getters.token) {
         config.headers.authorization = state.getters.token
     }

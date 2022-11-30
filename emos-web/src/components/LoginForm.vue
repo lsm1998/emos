@@ -50,6 +50,7 @@ const formData: ILoginData = reactive({
 const submit = () => {
   login(formData).then(res => {
     state.commit("setToken", res.data)
+    console.log("token=", state.getters.token)
     router.push("/")
   }).catch(err => {
     console.log("err=", err)

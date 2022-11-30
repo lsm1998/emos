@@ -9,7 +9,7 @@ export function login(data: ILoginData) {
     })
 }
 
-export function profile(){
+export function profile() {
     return service({
         url: "/user/profile",
         method: "GET",
