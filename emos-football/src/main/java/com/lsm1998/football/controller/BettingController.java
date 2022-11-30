@@ -6,10 +6,7 @@ import com.lsm1998.football.model.Betting;
 import com.lsm1998.football.model.User;
 import com.lsm1998.football.service.BettingService;
 import io.swagger.annotations.*;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.Date;
@@ -37,5 +34,18 @@ public class BettingController
         betting.setCreatedTime(now);
         betting.setUpdatedTime(now);
         return AjaxResponse.success(bettingService.betting(betting));
+    }
+
+    @GetMapping
+    @ApiOperation(value = "投注列表")
+    @ApiImplicitParam(name = "authorization", value = "String 类型", required = true, dataType = "String", paramType = "header")
+    public AjaxResponse list()
+    {
+        User user = ThreadLocalCache.baseSignatureRequestThreadLocal.get();
+        if (user == null)
+        {
+            return AjaxResponse.failWithParam();
+        }
+        return AjaxResponse.success(bettingService.list(new Betting()));
     }
 }

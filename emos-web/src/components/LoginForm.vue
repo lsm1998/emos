@@ -1,31 +1,31 @@
 <template>
   <!-- model 在校验以及重置输入的时候必填 -->
   <el-form
-      ref="loginForm"
-      label-width="120px"
-      class="loginForm sign-in-form"
+    ref='loginForm'
+    label-width='120px'
+    class='loginForm sign-in-form'
   >
-    <el-form-item label="账号" prop="email">
+    <el-form-item label='账号' prop='email'>
       <el-input
-          v-model="formData.username"
-          placeholder="输入账号"
+        v-model='formData.username'
+        placeholder='输入账号'
       />
     </el-form-item>
-    <el-form-item label="密码" prop="password">
+    <el-form-item label='密码' prop='password'>
       <el-input
-          v-model="formData.password"
-          type="password"
-          placeholder="输入密码"
+        v-model='formData.password'
+        type='password'
+        placeholder='输入密码'
       />
     </el-form-item>
     <el-form-item>
       <!-- 提交前进行校验 -->
-      <el-button type="primary" class="submit-btn"
-                 @click="submit">登陆
+      <el-button type='primary' class='submit-btn'
+                 @click='submit'>登陆
       </el-button>
     </el-form-item>
     <!-- 找回密码 -->
-    <div class="tiparea">
+    <div class='tiparea'>
       <p>忘记密码？
         <button>立即找回</button>
       </p>
@@ -33,27 +33,27 @@
   </el-form>
 </template>
 
-<script lang="ts" setup>
-import {reactive} from "vue";
-import {login} from "@/request/api";
-import {ILoginData} from "@/types/login";
-import {useStore} from "vuex"
-import router from "@/router";
+<script lang='ts' setup>
+import { reactive } from 'vue'
+import { login } from '@/request/api'
+import { ILoginData } from '@/types/login'
+import { useStore } from 'vuex'
+import router from '@/router'
 
 const state = useStore()
 
 const formData: ILoginData = reactive({
   username: '',
   password: ''
-});
+})
 
 const submit = () => {
   login(formData).then(res => {
-    state.commit("setToken", res.data)
-    console.log("token=", state.getters.token)
-    router.push("/")
+    state.commit('setToken', res.data)
+    localStorage.setItem('token', res.data)
+    router.push('/')
   }).catch(err => {
-    console.log("err=", err)
+    console.log('err=', err)
   })
 }
 </script>
