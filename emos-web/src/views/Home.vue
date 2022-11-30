@@ -2,7 +2,7 @@
   <div>
     <h1>主页</h1>
 
-    <p>欢迎你：{{ state.getters.user.username }}</p>
+    <p>欢迎你：{{ state.getters.user.realName }}</p>
 
 
   </div>
