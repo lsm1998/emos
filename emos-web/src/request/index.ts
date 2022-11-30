@@ -1,10 +1,10 @@
 import axios from "axios";
 
-import store from "@/store";
+import { useStore } from "vuex"
 
 // 创建axios实例
 const service = axios.create({
-    baseURL: "/api/v1",
+    baseURL: "http://127.0.0.1:9876/api/v1",
     timeout: 5000,
     headers: {
         "content-type": "application/json; charset=utf-8"
@@ -19,9 +19,9 @@ service.interceptors.request.use((config) => {
     if (config.url === '/user/login') {
         return config
     }
-    const token = store.getters.token()
-    if (token) {
-        config.headers.token = token
+    const state = useStore()
+    if (state.getters.token) {
+        config.headers.authorization = state.getters.token
     }
     return config
 })

@@ -5,12 +5,10 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
-import {mockXHR} from "@/mock";
-
 // 判断开发环境
-if (process.env.NODE_ENV == "development") {
-    mockXHR();
-}
+// if (process.env.NODE_ENV == "development") {
+//     mockXHR();
+// }
 
 const app = createApp(App)
 app.use(ElementPlus)

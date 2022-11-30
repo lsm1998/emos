@@ -3,12 +3,9 @@
     <div class="forms-container">
       <div class="signin-signup">
         <!-- 登陆 -->
-        <LoginForm :loginUser="loginUser" :rules="rules" />
+        <LoginForm/>
         <!-- 注册 -->
-        <RegisterForm
-          :registerUser="registerUser"
-          :registerRules="registerRules"
-        />
+        <RegisterForm/>
       </div>
     </div>
     <!-- 左右切换动画 -->
@@ -38,47 +35,12 @@
 </template>
 
 <script lang="ts" setup>
-import {ref, reactive} from 'vue';
-
-import { loginUser, rules } from "@/utils/loginValidators";
-import { registerUser, registerRules } from "@/utils/registerValidators";
+import {ref} from 'vue';
 
 import LoginForm from "@/components/LoginForm.vue";
 import RegisterForm from "@/components/RegisterForm.vue";
 
 const signUpMode = ref<boolean>(false);
-
-// export default defineComponent({
-//   setup() {
-//     const data: LoginData = reactive(new LoginData())
-//
-//     const rules = {
-//       username: [{trigger: 'blur', required: true, message: "请输入账号"}],
-//       password: [{trigger: 'blur', required: true, message: "请输入密码"}],
-//     }
-//
-//     // 登录
-//     const ruleFormRef = ref<FormInstance>()
-//
-//     const submitForm = (formE: FormInstance | undefined) => {
-//       if (!formE) return
-//       formE.validate((isValid) => {
-//         if (isValid) {
-//           login(data.ruleForm)
-//         } else {
-//           return false
-//         }
-//       })
-//     }
-//
-//     // 重置
-//     const resetForm = () => {
-//       data.ruleForm.password = ""
-//       data.ruleForm.username = ""
-//     }
-//     return {...toRefs(data), rules, resetForm, ruleFormRef, submitForm}
-//   }
-// })
 </script>
 
 <style lang="scss" scoped>
