@@ -78,7 +78,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.lsm1998.workflow.EmosWorkflowApplication</mainClass>
+                    <mainClass>com.lsm1998.workflow.FootballApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

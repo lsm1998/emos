@@ -8,32 +8,24 @@ import lombok.Data;
 import org.apache.logging.log4j.util.Strings;
 
 @Data
-public class UserListParam<T> extends AbstractPageQueryParam<T>
+public class UserListParam extends AbstractPageQueryParam
 {
-    private User data;
+    private Long id;
 
-    public Page<T> getPageInfo()
-    {
-        this.checkPage();
-        this.checkSize();
-        return new Page<>(this.getPage(), this.getSize());
-    }
+    private String username;
 
     @Override
-    public QueryWrapper<T> queryWrapper()
+    public <T> QueryWrapper<T> queryWrapper()
     {
         QueryWrapper<T> wrapper = new QueryWrapper<>();
-        if(this.data == null)
+
+        if (this.getId() != 0)
         {
-            return wrapper;
+            wrapper = wrapper.eq("id", this.getId());
         }
-        if(this.data.getId() != 0)
+        if (!Strings.isEmpty(this.getUsername()))
         {
-            wrapper = wrapper.eq("id",this.data.getId());
-        }
-        if( !Strings.isEmpty(this.data.getUsername()))
-        {
-            wrapper = wrapper.like("username",this.data.getUsername());
+            wrapper = wrapper.like("username", this.getUsername());
         }
         return wrapper;
     }

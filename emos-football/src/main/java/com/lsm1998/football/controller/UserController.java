@@ -46,7 +46,6 @@ public class UserController
     @ApiImplicitParam(name = "authorization", value = "String 类型", required = true, dataType = "String", paramType = "header")
     public AjaxResponse profile()
     {
-        System.out.println("profile:" + Thread.currentThread().getName());
         User user = ThreadLocalCache.baseSignatureRequestThreadLocal.get();
         if (user == null)
         {

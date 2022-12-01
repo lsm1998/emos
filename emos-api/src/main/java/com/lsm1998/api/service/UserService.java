@@ -6,7 +6,7 @@ import com.lsm1998.api.request.UserListParam;
 
 public interface UserService
 {
-    Page<User> getPageList(UserListParam<User> param);
+    Page<User> getPageList(UserListParam param);
 
     boolean insert(User user);
 }

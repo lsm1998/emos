@@ -1,12 +1,17 @@
 package com.lsm1998.football.service;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lsm1998.football.model.Betting;
-
-import java.util.List;
+import com.lsm1998.football.model.dto.BettingDto;
+import com.lsm1998.football.request.BettingListParam;
 
 public interface BettingService
 {
-    boolean betting(Betting betting);
+    boolean saveBetting(Betting betting);
 
-    List<Betting> list(Betting find);
+    boolean updateBetting(Betting betting);
+
+    Page<BettingDto> list(BettingListParam find);
+
+    boolean delete(Long id,Long userId);
 }
