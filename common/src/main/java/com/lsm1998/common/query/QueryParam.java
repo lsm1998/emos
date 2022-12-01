@@ -3,7 +3,7 @@ package com.lsm1998.common.query;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 
 @FunctionalInterface
-public interface QueryParam<T>
+public interface QueryParam
 {
-    QueryWrapper<T> queryWrapper();
+    <T> QueryWrapper<T> queryWrapper();
 }

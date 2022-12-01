@@ -1,18 +1,13 @@
-package com.lsm1998.common.model;
+package com.lsm1998.football.model.dto;
 
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
-import java.io.Serializable;
 import java.util.Date;
 
-import static com.baomidou.mybatisplus.annotation.IdType.AUTO;
-
 @Data
-public class BaseModel implements Serializable
+public class BettingDto
 {
-    @TableId(type = AUTO)
     private Long id;
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -20,4 +15,18 @@ public class BaseModel implements Serializable
 
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updatedTime;
+
+    private Long userId;
+
+    private String content;
+
+    private Integer version;
+
+    private Integer amount;
+
+    private String schedule;
+
+    private Integer status;
+
+    private String realName;
 }

@@ -5,7 +5,7 @@ import com.lsm1998.common.query.PageParam;
 import lombok.Data;
 
 @Data
-public abstract class AbstractPageParam<T> implements PageParam<T>
+public abstract class AbstractPageParam implements PageParam
 {
     private int page;
 
@@ -19,7 +19,7 @@ public abstract class AbstractPageParam<T> implements PageParam<T>
         }
     }
 
-    public void checkSize()
+    private void checkSize()
     {
         if (size < 10)
         {
@@ -31,5 +31,12 @@ public abstract class AbstractPageParam<T> implements PageParam<T>
     }
 
     @Override
-    public abstract Page<T> getPageInfo();
+    public abstract <T> Page<T> getPageInfo();
+
+    public <T> Page<T> newPage()
+    {
+        this.checkPage();
+        this.checkSize();
+        return new Page<>(this.page, this.size);
+    }
 }

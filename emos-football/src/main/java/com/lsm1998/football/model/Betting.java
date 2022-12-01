@@ -13,4 +13,10 @@ public class Betting extends BaseModel
     private String content;
 
     private Integer version;
+
+    private Integer amount;
+
+    private String schedule;
+
+    private Integer status;
 }

@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService
     private UserMapper userMapper;
 
     @Override
-    public Page<User> getPageList(UserListParam<User> param)
+    public Page<User> getPageList(UserListParam param)
     {
         return userMapper.selectPage(param.getPageInfo(), param.queryWrapper());
     }

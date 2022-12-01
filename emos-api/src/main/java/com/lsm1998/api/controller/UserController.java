@@ -27,7 +27,7 @@ public class UserController
 //            @ApiImplicitParam(name = "size", value = "大小", required = true)
 //    })
     @ApiOperation(value = "用户列表")
-    public AjaxResponse getList(UserListParam<User> param)
+    public AjaxResponse getList(UserListParam param)
     {
         return AjaxResponse.success(userService.getPageList(param));
     }

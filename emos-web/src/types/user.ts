@@ -2,6 +2,7 @@ export interface IUserInfo {
     id: number
     username: string
     avatar: string
+    realName: string
 }
 
 export class UserInfo {
@@ -9,6 +10,7 @@ export class UserInfo {
     user: IUserInfo = {
         id: 0,
         username: "",
-        avatar: ""
+        avatar: "",
+        realName: ""
     }
 }
