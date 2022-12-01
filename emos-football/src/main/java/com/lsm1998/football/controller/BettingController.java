@@ -50,10 +50,10 @@ public class BettingController
         return AjaxResponse.success(bettingService.list(param));
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping()
     @ApiOperation(value = "删除记录")
     @ApiImplicitParam(name = "authorization", value = "String 类型", required = true, dataType = "String", paramType = "header")
-    public AjaxResponse list(@PathVariable Long id)
+    public AjaxResponse delete(@RequestParam Long id)
     {
         User user = ThreadLocalCache.baseSignatureRequestThreadLocal.get();
         if (user == null)
@@ -61,5 +61,20 @@ public class BettingController
             return AjaxResponse.failWithParam();
         }
         return AjaxResponse.success(bettingService.delete(id, user.getId()));
+    }
+
+    @PutMapping()
+    @ApiOperation(value = "修改记录")
+    @ApiImplicitParam(name = "authorization", value = "String 类型", required = true, dataType = "String", paramType = "header")
+    public AjaxResponse update(@RequestBody Betting betting)
+    {
+        User user = ThreadLocalCache.baseSignatureRequestThreadLocal.get();
+        if(betting.getId() == null || user == null)
+        {
+            return AjaxResponse.failWithParam();
+        }
+        betting.setUpdatedTime(new Date());
+        betting.setUserId(user.getId());
+        return AjaxResponse.success(bettingService.updateBetting(betting));
     }
 }
