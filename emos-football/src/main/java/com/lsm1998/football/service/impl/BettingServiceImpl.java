@@ -43,6 +43,12 @@ public class BettingServiceImpl implements BettingService
     {
         Page<Betting> page = bettingMapper.selectPage(find.getPageInfo(), find.queryWrapper());
         List<Betting> records = page.getRecords();
+
+        if (records.size() == 0)
+        {
+            return new Page<>();
+        }
+
         List<Long> userIdList = records.stream().map(Betting::getUserId).distinct().collect(Collectors.toList());
         List<User> users = userMapper.selectBatchIds(userIdList);
 

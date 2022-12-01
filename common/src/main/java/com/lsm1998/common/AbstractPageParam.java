@@ -21,7 +21,7 @@ public abstract class AbstractPageParam implements PageParam
 
     private void checkSize()
     {
-        if (size < 10)
+        if (size < 1)
         {
             size = 10;
         } else if (size > 100)

@@ -43,7 +43,7 @@ export function updateBetting(data: IBetting) {
 
 export function deleteBetting(id: number) {
     return service({
-        url: `'/betting/${id}`,
+        url: `/betting?id=${id}`,
         method: 'DELETE',
     })
 }

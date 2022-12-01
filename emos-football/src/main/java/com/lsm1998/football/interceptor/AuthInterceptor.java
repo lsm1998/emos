@@ -29,7 +29,6 @@ public class AuthInterceptor implements HandlerInterceptor
         user.setUsername(claimMap.get("username").asString());
 
         ThreadLocalCache.baseSignatureRequestThreadLocal.set(user);
-        System.out.println("preHandle:" + Thread.currentThread().getName());
         return true;
     }
 

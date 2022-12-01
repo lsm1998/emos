@@ -4,7 +4,8 @@ import {ElMessage} from "element-plus";
 
 // 创建axios实例
 const service = axios.create({
-    baseURL: 'http://football-api.lsm1998.com/api/v1',
+    // baseURL: 'http://football-api.lsm1998.com/api/v1',
+    baseURL: 'http://127.0.0.1:9876/api/v1',
     timeout: 5000,
     headers: {
         'content-type': 'application/json; charset=utf-8'

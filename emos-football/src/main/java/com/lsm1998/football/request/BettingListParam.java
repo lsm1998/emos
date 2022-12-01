@@ -1,22 +1,21 @@
 package com.lsm1998.football.request;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.lsm1998.common.AbstractPageQueryParam;
 import lombok.Data;
 
-import java.util.Date;
+import java.util.List;
 
 @Data
 public class BettingListParam extends AbstractPageQueryParam
 {
     private Long userId;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date startTime;
+    private String startTime;
 
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
-    private Date endTime;
+    private String endTime;
+
+    private List<Integer> statusList;
 
     @Override
     public <T> QueryWrapper<T> queryWrapper()
@@ -33,6 +32,11 @@ public class BettingListParam extends AbstractPageQueryParam
         if (this.getEndTime() != null)
         {
             wrapper.le("created_time", this.getEndTime());
+        }
+
+        if (this.getStatusList() != null && !this.getStatusList().isEmpty())
+        {
+            wrapper.in("status", this.getStatusList());
         }
         return wrapper;
     }
