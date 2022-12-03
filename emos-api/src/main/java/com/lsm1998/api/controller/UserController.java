@@ -3,7 +3,7 @@ package com.lsm1998.api.controller;
 import com.lsm1998.api.model.User;
 import com.lsm1998.api.service.UserService;
 import com.lsm1998.common.AjaxResponse;
-import com.lsm1998.api.request.UserListParam;
+import com.lsm1998.api.controller.request.UserListParam;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.logging.log4j.util.Strings;
@@ -11,21 +11,25 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+import java.util.Map;
+
 import static com.lsm1998.common.constant.code.*;
 
 @RestController
-@RequestMapping("user")
+@RequestMapping("/api/v1/user")
 @Api(tags = "用户服务")
 public class UserController
 {
     @Resource
     private UserService userService;
 
+    @PostMapping("login")
+    public AjaxResponse login(@RequestBody User user)
+    {
+        return AjaxResponse.success(Map.of("token", "123"));
+    }
+
     @GetMapping
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(name = "page", value = "页码", required = true),
-//            @ApiImplicitParam(name = "size", value = "大小", required = true)
-//    })
     @ApiOperation(value = "用户列表")
     public AjaxResponse getList(UserListParam param)
     {

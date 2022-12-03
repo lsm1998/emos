@@ -1,24 +1,22 @@
 <template>
-  <div class='not-fond'>
-    <img src='../assets/404.jpg' alt=''>
-  </div>
+	<div class="content"><div class="title">诶呀，你访问的页面不存在</div></div>
 </template>
 
-<script>
-export default {
-  name: '404'
-}
-</script>
+<script></script>
 
-<style scoped>
-.not-fond {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
+<style lang="less" scoped="scoped">
+.content {
+	text-align: center;
+	height: 100%;
+	padding-top: 200px;
+	background-image: url(../assets/404.jpg);
+	background-size: cover;
+	background-position: center;
 
-.not-fond img{
-  width: 100%;
-  height: 100%;
+	.title {
+		font-family: '微软雅黑';
+		font-size: 28px;
+		color: #888;
+	}
 }
 </style>

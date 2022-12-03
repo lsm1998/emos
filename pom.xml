@@ -14,7 +14,6 @@
         <module>emos-api</module>
         <module>emos-workflow</module>
         <module>common</module>
-        <module>emos-football</module>
     </modules>
 
     <properties>
@@ -44,6 +43,7 @@
         <jaxb-version>2.3.0</jaxb-version>
         <commons-codec-version>1.15</commons-codec-version>
         <auth0-jwt-version>4.2.1</auth0-jwt-version>
+        <minio-version>8.0.0</minio-version>
     </properties>
 
     <dependencyManagement>

@@ -5,7 +5,7 @@ import com.lsm1998.api.mapper.UserMapper;
 import com.lsm1998.api.model.User;
 import com.lsm1998.api.service.UserService;
 import com.lsm1998.common.MD5Util;
-import com.lsm1998.api.request.UserListParam;
+import com.lsm1998.api.controller.request.UserListParam;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
