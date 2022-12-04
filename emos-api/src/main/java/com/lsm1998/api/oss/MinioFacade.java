@@ -9,8 +9,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.List;
 
 @Component
@@ -82,8 +80,7 @@ public class MinioFacade
 
     public String updateFile(String bucketName, String fileName, File file) throws Exception
     {
-
-        String type = Files.probeContentType(file.toPath());
+        // String type = Files.probeContentType(file.toPath());
         try (InputStream inputStream = new FileInputStream(file))
         {
             minioClient.putObject(
