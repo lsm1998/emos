@@ -9,6 +9,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.PostConstruct;
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.List;
 
 @Component
@@ -64,7 +66,6 @@ public class MinioFacade
                         object(fileName).
                         contentType(file.getContentType()).
                         stream(file.getInputStream(), file.getSize(), -1).
-                        contentType("image/jpg").
                         build());
         return String.format("%s/%s/%s", url, bucketName, fileName);
     }
@@ -81,6 +82,8 @@ public class MinioFacade
 
     public String updateFile(String bucketName, String fileName, File file) throws Exception
     {
+
+        String type = Files.probeContentType(file.toPath());
         try (InputStream inputStream = new FileInputStream(file))
         {
             minioClient.putObject(
@@ -88,7 +91,6 @@ public class MinioFacade
                             bucket(bucketName).
                             object(fileName).
                             stream(inputStream, file.length(), -1).
-                            contentType("image/jpg").
                             build());
         } catch (IOException exception)
         {
