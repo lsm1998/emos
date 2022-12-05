@@ -53,3 +53,4 @@ pnpm-debug.log*
 *.sw?
 
 /emos-web/node_modules/
+/vue-vue-ts-app/node_modules/
