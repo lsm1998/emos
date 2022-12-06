@@ -9,4 +9,6 @@ public interface UserService
     Page<User> getPageList(UserListParam param);
 
     boolean insert(User user);
+
+    User getUserByUsername(String username);
 }
