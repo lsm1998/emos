@@ -32,8 +32,6 @@ target/
 .vscode/
 
 .DS_Store
-node_modules
-/dist
 
 
 # local env files
@@ -52,5 +50,5 @@ pnpm-debug.log*
 *.sln
 *.sw?
 
-/emos-web/node_modules/
-/vue-vue-ts-app/node_modules/
+*/node_modules/
+*/dist

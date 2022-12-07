@@ -1,12 +1,8 @@
 <template>
-  <div>
-    hello app
-
-    <el-button type='primary'>primary</el-button>
-  </div>
+    <router-view />
 </template>
 
-<style lang="scss">
+<style lang='scss'>
 @import "@/assets/styles/reset.scss";
 @import "@/assets/styles/iconfont.scss";
 @import "@/assets/styles/common.scss";

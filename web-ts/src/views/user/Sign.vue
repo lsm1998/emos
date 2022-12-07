@@ -1,11 +1,8 @@
 <template>
-
+<div>sign</div>
 </template>
 
-<script>
-export default {
-  name: 'Home'
-}
+<script setup lang='ts'>
 </script>
 
 <style scoped>

@@ -1,5 +1,5 @@
 {
-  "name": "vue-ts-app",
+  "name": "web-ts",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.0.10",
+    "axios": "^1.2.1",
     "core-js": "^3.8.3",
     "element-plus": "^2.2.26",
     "vue": "^3.2.13",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0"
+    "vuex": "^4.0.0",
+    "vuex-persist": "^3.1.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.4.0",
