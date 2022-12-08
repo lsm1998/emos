@@ -52,7 +52,6 @@ import { ElMessage } from 'element-plus'
 import IUser from '@/types/user'
 import { useStore } from '@/store'
 import { useRouter } from 'vue-router'
-import { login } from '@/api/user'
 
 const store = useStore()
 const router = useRouter()

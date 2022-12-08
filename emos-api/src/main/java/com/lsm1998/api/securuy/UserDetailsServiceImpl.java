@@ -1,6 +1,5 @@
 package com.lsm1998.api.securuy;
 
-import com.lsm1998.api.model.Auth;
 import com.lsm1998.api.model.User;
 import com.lsm1998.api.service.UserAuthService;
 import com.lsm1998.api.service.UserService;
