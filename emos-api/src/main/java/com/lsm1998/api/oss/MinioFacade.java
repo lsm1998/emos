@@ -64,7 +64,6 @@ public class MinioFacade
                         object(fileName).
                         contentType(file.getContentType()).
                         stream(file.getInputStream(), file.getSize(), -1).
-                        contentType("image/jpg").
                         build());
         return String.format("%s/%s/%s", url, bucketName, fileName);
     }
@@ -88,7 +87,6 @@ public class MinioFacade
                             bucket(bucketName).
                             object(fileName).
                             stream(inputStream, file.length(), -1).
-                            contentType("image/jpg").
                             build());
         } catch (IOException exception)
         {
