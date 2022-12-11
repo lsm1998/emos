@@ -3,6 +3,7 @@ package com.lsm1998.api.securuy;
 import com.auth0.jwt.interfaces.Claim;
 import com.lsm1998.common.jwt.JwtUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
@@ -23,6 +24,11 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException
     {
         String token = request.getHeader("token");
+        if (StringUtils.isEmpty(token))
+        {
+            log.error("缺少token");
+            throw new RuntimeException("缺少token");
+        }
         LoginUser loginUser = new LoginUser();
 
         Map<String, Claim> claims = JwtUtil.parse("", token);
