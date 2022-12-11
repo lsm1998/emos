@@ -2,7 +2,7 @@ package com.lsm1998.common;
 
 import java.util.HashMap;
 
-import static com.lsm1998.common.constant.code.*;
+import static com.lsm1998.common.constant.Code.*;
 
 public class AjaxResponse extends HashMap<String, Object>
 {

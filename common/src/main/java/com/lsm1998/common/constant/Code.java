@@ -1,6 +1,6 @@
 package com.lsm1998.common.constant;
 
-public class code
+public class Code
 {
     // OK
     public static final int CODE_OK = 200;

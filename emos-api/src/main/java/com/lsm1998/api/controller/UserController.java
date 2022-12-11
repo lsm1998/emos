@@ -13,7 +13,7 @@ import javax.annotation.Resource;
 
 import java.util.Map;
 
-import static com.lsm1998.common.constant.code.*;
+import static com.lsm1998.common.constant.Code.*;
 
 @RestController
 @RequestMapping("/api/v1/user")
