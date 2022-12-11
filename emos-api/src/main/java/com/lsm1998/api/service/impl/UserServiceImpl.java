@@ -1,5 +1,6 @@
 package com.lsm1998.api.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.lsm1998.api.mapper.UserMapper;
 import com.lsm1998.api.model.User;
@@ -32,5 +33,13 @@ public class UserServiceImpl implements UserService
         user.setCreatedTime(now);
         user.setUpdatedTime(now);
         return userMapper.insert(user) > 0;
+    }
+
+    @Override
+    public User getUserByUsername(String username)
+    {
+        QueryWrapper<User> wrapper = new QueryWrapper<>();
+        wrapper.eq("username", username);
+        return userMapper.selectOne(wrapper);
     }
 }

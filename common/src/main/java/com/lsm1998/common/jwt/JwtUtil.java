@@ -9,6 +9,7 @@ import com.auth0.jwt.interfaces.JWTVerifier;
 
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class JwtUtil
@@ -48,6 +49,9 @@ public class JwtUtil
                 } else if (v instanceof Date)
                 {
                     builder.withClaim(k, (Date) v);
+                } else if (v instanceof List)
+                {
+                    builder.withClaim(k, (List<?>) v);
                 }
             });
             // 返回token字符串

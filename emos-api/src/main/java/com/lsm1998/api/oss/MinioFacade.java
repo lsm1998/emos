@@ -80,6 +80,7 @@ public class MinioFacade
 
     public String updateFile(String bucketName, String fileName, File file) throws Exception
     {
+        // String type = Files.probeContentType(file.toPath());
         try (InputStream inputStream = new FileInputStream(file))
         {
             minioClient.putObject(
